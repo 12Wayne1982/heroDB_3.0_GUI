@@ -17,7 +17,7 @@ export class SuperHeroService {
     hero.publishingYear = 1962;
     hero.createdBy = 'Stan Lee & Steve Ditko';
 
-    // brakcets means array.
+    // brackets means array.
     return [hero];
   }
 }
