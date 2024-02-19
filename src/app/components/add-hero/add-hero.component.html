@@ -1,0 +1,110 @@
+<div>
+  <h1>ADD HERO</h1>
+
+  <h1>Add Hero</h1>
+  <div class="card">
+    <div class="card-header">Add Hero</div>
+    <div class="card-body">
+      <form
+        ngNativeValidate
+        [formGroup]="addHeroFormular"
+        (ngSubmit)="createHero()"
+      >
+        <div class="mb-3">
+          <label for="" class="form-label">Hero-Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name=""
+            formControlName="name"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Alter Ego</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name=""
+            formControlName="alterEgo"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert alter ego"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Publisher</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name=""
+            formControlName="publisher"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert publisher"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">First Appearence</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name=""
+            formControlName="firstAppearence"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert first appearence"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Publishing Year</label>
+          <input
+            required
+            type="number"
+            class="form-control"
+            name=""
+            formControlName="publishingYear"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert publishing year"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Created By</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            name=""
+            formControlName="createdBy"
+            id=""
+            aria-describedby="helpId"
+            placeholder="insert creator"
+          />
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Button group name">
+          <button type="submit" class="btn btn-success">Insert</button>
+          <button
+            type="button"
+            routerLink="/display-heroes"
+            class="btn btn-primary"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

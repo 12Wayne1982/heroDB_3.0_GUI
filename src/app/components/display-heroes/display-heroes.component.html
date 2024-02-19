@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Alter Ego</th>
+    <th>Publisher</th>
+    <th>First Appearence</th>
+    <th>Publishing Year</th>
+    <th>Created By</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes; let iControl = index">
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.alterEgo }}</td>
+      <td>{{ hero.publisher }}</td>
+      <td>{{ hero.firstAppearence }}</td>
+      <td>{{ hero.publishingYear }}</td>
+      <td>{{ hero.createdBy }}</td>
+      <td>
+        <!-- hero.id wird an edit-hero geschickt  -->
+        <button (click)="sendData(hero)">Edit</button>
+        <button (click)="deleteHero(hero, iControl)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button routerLink="/menu">Back To Menu</button>
