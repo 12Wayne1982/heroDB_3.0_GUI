@@ -1,23 +1,41 @@
 import { Injectable } from '@angular/core';
 import { SuperHero } from '../models/super-hero';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SuperHeroService {
-  constructor() {}
+  // controller name
+  private url = 'SuperHero';
+  constructor(private http: HttpClient) {}
 
-  public getSuperHeroes(): SuperHero[] {
-    let hero = new SuperHero();
-    hero.id = 1;
-    hero.name = 'Spider-Man';
-    hero.alterEgo = 'Peter Parker';
-    hero.publisher = 'Marvel Comics';
-    hero.firstAppearence = 'Amazing Fantasy 15';
-    hero.publishingYear = 1962;
-    hero.createdBy = 'Stan Lee & Steve Ditko';
+  public getSuperHeroes(): Observable<SuperHero[]> {
+    return this.http.get<SuperHero[]>(`${environment.apiUrl}/${this.url}`);
+  }
 
-    // brackets means array.
-    return [hero];
+  public updateHero(hero: SuperHero): Observable<SuperHero[]> {
+    console.log(hero);
+    return this.http.put<SuperHero[]>(
+      `${environment.apiUrl}/${this.url}`,
+      hero
+    );
+  }
+
+  public createHero(hero: SuperHero): Observable<SuperHero[]> {
+    return this.http.post<SuperHero[]>(
+      // der Adresse wir der Parameter 'hero' beigefügt.
+      `${environment.apiUrl}/${this.url}`,
+      hero
+    );
+  }
+
+  public deleteHero(hero: SuperHero): Observable<SuperHero[]> {
+    console.log(hero);
+    return this.http.delete<SuperHero[]>(
+      `${environment.apiUrl}/${this.url}/${hero.id}`
+    );
   }
 }
